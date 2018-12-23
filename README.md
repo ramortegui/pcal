@@ -2,20 +2,5 @@
 
 Elixir wrapper for `pcal` using Ports.
 
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `pcal` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:pcal, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/pcal](https://hexdocs.pm/pcal).
+This application requires 'pcal' and 'ps2pdf' commands installed on the system.
 
