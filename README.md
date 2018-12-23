@@ -1,2 +1,2 @@
 # pcal
-Web app to generates a monthly PDF calendar using elixir ports.
+Elixir wrapper for `pcal` using Ports.
