@@ -54,9 +54,11 @@ defmodule Pcal do
         case converter_exists?() do
           {:ok, converter_path} ->
             {:ok, %{command_path: command_path, converter_path: converter_path}}
+
           {:error, message} ->
             {:error, message}
         end
+
       {:error, message} ->
         {:error, message}
     end
