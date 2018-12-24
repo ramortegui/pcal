@@ -37,4 +37,30 @@ defmodule Pcal do
       _ -> {:error, "can not find executable #{@pdf_converter_command}."}
     end
   end
+
+  @doc """
+  Check prerequisites
+
+  ## Exampless
+
+      iex> Pcal.prerequisites?
+      {:ok, %{command_path: "/usr/bin/pcal", converter_path: "/usr/bin/ps2pdf"}}
+
+  """
+
+  def prerequisites? do
+    case command_exists?() do
+      {:ok, command_path} ->
+        case converter_exists?() do
+          {:ok, converter_path} ->
+            {:ok, %{command_path: command_path, converter_path: converter_path}}
+
+          {:error, message} ->
+            {:error, message}
+        end
+
+      {:error, message} ->
+        {:error, message}
+    end
+  end
 end
