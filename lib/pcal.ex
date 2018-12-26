@@ -32,7 +32,7 @@ defmodule Pcal do
 
   """
   def converter_exists? do
-    case System.find_executable(@pdf_converter_command) do
+    case System.find_executable( @pdf_converter_command ) do
       path when is_binary(path) -> {:ok, path}
       _ -> {:error, "can not find executable #{@pdf_converter_command}."}
     end
