@@ -11,8 +11,9 @@ defmodule Pcal do
 
   ## Examples
 
-      iex> Pcal.command_exists?
-      {:ok, "/usr/bin/pcal"}
+      iex> {:ok, path} = Pcal.command_exists?
+      iex> String.ends_with?(path, "/pcal")
+      true
 
   """
   def command_exists? do
@@ -27,8 +28,9 @@ defmodule Pcal do
 
   ## Examples
 
-      iex> Pcal.converter_exists?
-      {:ok, "/usr/bin/ps2pdf"}
+      iex> {:ok, path} = Pcal.converter_exists?
+      iex> String.ends_with?(path, "/ps2pdf")
+      true
 
   """
   def converter_exists? do
@@ -41,10 +43,14 @@ defmodule Pcal do
   @doc """
   Check prerequisites
 
-  ## Exampless
+  ## Examples
 
       iex> Pcal.prerequisites?
-      {:ok, %{command_path: "/usr/bin/pcal", converter_path: "/usr/bin/ps2pdf"}}
+      iex> {:ok, %{command_path: command_path, converter_path: converter_path}} = {:ok, %{command_path: "/usr/bin/pcal", converter_path: "/usr/bin/ps2pdf"}}
+      iex> String.ends_with?(command_path, "/pcal")
+      true
+      iex> String.ends_with?(converter_path, "/ps2pdf")
+      true
 
   """
 
