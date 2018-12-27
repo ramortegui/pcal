@@ -25,8 +25,8 @@ The above command generates a pdf calendar of January 2019.
 
 Taken from http://macappstore.org/ghostscript/
 
-`brew install pcal`
-
-`ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null`
-
-` brew install ghostscript`
+```shell
+brew install pcal`
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null
+brew install ghostscript
+```
