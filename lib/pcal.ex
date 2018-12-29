@@ -102,10 +102,10 @@ defmodule Pcal do
 
   ## Examples
 
-    iex> Pcal.generate_pdf(%Pcal{month: "1", year: "2019", output: "output.pdf"})
-    {:ok, "output.pdf"}
+    iex> Pcal.generate_pdf(%Pcal{month: "1", year: "2019", output: "output2.pdf"})
+    {:ok, "output2.pdf"}
 
-    iex> File.rm("./output.pdf")
+    iex> File.rm("./output2.pdf")
     :ok
   """
   def generate_pdf(%Pcal{} = pcal) do
