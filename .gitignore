@@ -24,3 +24,6 @@ pcal-*.tar
 
 # Ignore temp vim files
 *.swp
+
+# Ignore tmp directory
+/tmp/
