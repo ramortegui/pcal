@@ -26,4 +26,4 @@ pcal-*.tar
 *.swp
 
 # Ignore tmp directory
-/tmp/
+/tmp/*.pdf
