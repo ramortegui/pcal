@@ -74,7 +74,7 @@ defmodule Pcal do
   end
 
   @doc """
-  Generate pdf
+  Executes the shells script #{@script}.
 
   ## Examples
 
@@ -89,8 +89,33 @@ defmodule Pcal do
     shell = System.find_executable("sh")
 
     case System.cmd(shell, [@script, month, year, output]) do
-      {"", 0} -> {:ok, output}
-      {_, error_code} -> {:error, "Error executing shell command #{error_code}"}
+      {"", 0} ->
+        {:ok, output}
+
+      {_, error_code} ->
+        {:error, "Error executing shell command #{error_code}"}
+    end
+  end
+
+  @doc """
+  Generates a pdf
+
+  ## Examples
+
+    iex> Pcal.generate_pdf(%Pcal{month: "1", year: "2019", output: "output.pdf"})
+    {:ok, "output.pdf"}
+
+    iex> File.rm("./output.pdf")
+    :ok
+  """
+  def generate_pdf(%Pcal{} = pcal) do
+    case Pcal.prerequisites?() do
+      {:ok, _commands} ->
+        execute_shell(pcal)
+
+      _ ->
+        {:error,
+         "Please check prerequisites #{@pcal_command}, #{@pdf_converter_command}, and #{@script}"}
     end
   end
 end
