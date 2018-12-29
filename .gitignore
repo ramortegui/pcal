@@ -25,5 +25,5 @@ pcal-*.tar
 # Ignore temp vim files
 *.swp
 
-# Ignore tmp directory
-/tmp/*.pdf
+# Ignore pdf files on support directory
+/suport/*.pdf
