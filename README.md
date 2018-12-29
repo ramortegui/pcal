@@ -5,7 +5,7 @@ Elixir app to generate a monthly pdf calendar using  `pcal` and `ps2pdf` using P
 The purpose of this application is to generate a monthly calendar in pdf.
 
 
-![calendar_sample](./tmp/calendar_sample.png?raw=true "January 2019")
+![sample_calendar](./support/sample_calendar.png?raw=true "January 2019")
 
 
 The command to generate the pdf without the need to elixir for January 2019 is:

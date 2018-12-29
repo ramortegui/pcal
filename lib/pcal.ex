@@ -78,8 +78,8 @@ defmodule Pcal do
 
   ## Examples
 
-    iex> Pcal.execute_shell(%Pcal{month: "1", year: "2019", output: "./tmp/output.pdf"})
-    {:ok, "./tmp/output.pdf"}
+    iex> Pcal.execute_shell(%Pcal{month: "1", year: "2019", output: "./support/output.pdf"})
+    {:ok, "./support/output.pdf"}
 
   """
   def execute_shell(%Pcal{month: month, year: year, output: output}) do
@@ -99,8 +99,8 @@ defmodule Pcal do
 
   ## Examples
 
-    iex> Pcal.generate_pdf(%Pcal{month: "1", year: "2019", output: "./tmp/output2.pdf"})
-    {:ok, "./tmp/output2.pdf"}
+    iex> Pcal.generate_pdf(%Pcal{month: "1", year: "2019", output: "./support/output2.pdf"})
+    {:ok, "./support/output2.pdf"}
 
   """
   def generate_pdf(%Pcal{} = pcal) do
