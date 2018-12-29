@@ -84,7 +84,8 @@ defmodule Pcal do
   """
   def execute_shell(%Pcal{month: month, year: year, output: output}) do
     shell = System.find_executable("sh")
-    case System.cmd(shell,[@script, month, year, output]) do
+
+    case System.cmd(shell, [@script, month, year, output]) do
       {"", 0} -> {:ok, output}
       {_, error_code} -> {:error, "Error executing shell command #{error_code}"}
     end
