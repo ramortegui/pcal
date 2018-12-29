@@ -5,6 +5,7 @@ otp_release:
   - '21.2'
 before_install:
   - sudo apt-get install -y pcal ghostscript
+  - mkdir tmp
 addons:
   apt:
     update: true
