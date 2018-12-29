@@ -2,13 +2,15 @@
 
 Elixir app to generate a monthly pdf calendar using  `pcal` and `ps2pdf` using Ports.
 
-The purpose of this application is to generate a monthly calendar in pdf. The actual command to run without the need to elixir is:
+The purpose of this application is to generate a monthly calendar in pdf.
+
+
+
+The command to generate the pdf without the need to elixir for January 2019 is:
 
 ```shell
 pcal 1 2019 | ps2pdf - output.pdf
 ```
-
-The above command generates a pdf calendar of January 2019.
 
 ## Pre-requisites
 
@@ -41,6 +43,7 @@ Add module as dependency on your mix project
 
 Generate a pdf file
 ```elixir
-Pcal.generate_pdf(%Pcal{month: "1", year: "2019", output: "output.pdf"})
+iex> Pcal.generate_pdf(%Pcal{month: "1", year: "2019", output: "output.pdf"})
+{:ok, "output.pdf"}
 ```
 
