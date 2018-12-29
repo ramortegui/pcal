@@ -30,3 +30,17 @@ brew install pcal`
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null
 brew install ghostscript
 ```
+
+## Usage
+
+Add module as dependency on your mix project
+
+```elixir
+{:pcal, git: "https://github.com/ramortegui/pcal.git", tag: "v0.1"}
+```
+
+Generate a pdf file
+```elixir
+Pcal.generate_pdf(%Pcal{month: "1", year: "2019", output: "output.pdf"})
+```
+
