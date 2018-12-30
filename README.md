@@ -40,7 +40,7 @@ brew install ghostscript
 Add module as dependency on your mix project
 
 ```elixir
-{:pcal, git: "https://github.com/ramortegui/pcal.git", tag: "v0.1"}
+{:pcal, git: "https://github.com/ramortegui/pcal.git", tag: "v0.1.1"}
 ```
 
 Generate a pdf file
