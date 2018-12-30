@@ -74,7 +74,7 @@ defmodule Pcal do
   end
 
   @doc """
-  Executes the shells script #{@script}.
+  Executes the shells script.
 
   ## Examples
 
@@ -85,7 +85,7 @@ defmodule Pcal do
   def execute_shell(%Pcal{month: month, year: year, output: output}) do
     shell = System.find_executable("sh")
 
-    case System.cmd(shell, [@script, month, year, output]) do
+    case System.cmd(shell, [script(), month, year, output]) do
       {"", 0} ->
         {:ok, output}
 
@@ -110,7 +110,14 @@ defmodule Pcal do
 
       _ ->
         {:error,
-         "Please check prerequisites #{@pcal_command}, #{@pdf_converter_command}, and #{@script}"}
+         "Please check prerequisites #{@pcal_command}, #{@pdf_converter_command}, and #{script()}"}
+    end
+  end
+
+  defp script() do
+    case File.exists?(@script) do
+      true -> @script
+      false -> "./deps/pcal/#{@script}"
     end
   end
 end
