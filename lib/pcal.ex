@@ -114,7 +114,7 @@ defmodule Pcal do
     end
   end
 
-  defp script() do
+  defp script do
     case File.exists?(@script) do
       true -> @script
       false -> "./deps/pcal/#{@script}"
