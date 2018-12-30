@@ -26,4 +26,4 @@ pcal-*.tar
 *.swp
 
 # Ignore pdf files on support directory
-/suport/*.pdf
+/support/*.pdf
