@@ -7,7 +7,7 @@ defmodule Pcal do
 
   @pcal_command "pcal"
   @pdf_converter_command "ps2pdf"
-  @script "generate_pdf.sh"
+  @script "bin/generate_pdf"
 
   @doc """
   Check if pcal command exists.
