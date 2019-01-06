@@ -49,3 +49,6 @@ iex> Pcal.generate_pdf(%Pcal{month: "1", year: "2019", output: "output.pdf"})
 {:ok, "output.pdf"}
 ```
 
+## On production
+
+Copy `deps/pcal/bin/generate_pdf` to the `bin/` directory of your release.
