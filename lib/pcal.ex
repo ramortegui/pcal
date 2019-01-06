@@ -7,7 +7,7 @@ defmodule Pcal do
 
   @pcal_command "pcal"
   @pdf_converter_command "ps2pdf"
-  @script "generate_pdf.sh"
+  @script "bin/generate_pdf"
 
   @doc """
   Check if pcal command exists.
@@ -117,7 +117,7 @@ defmodule Pcal do
   defp script do
     case File.exists?(@script) do
       true -> @script
-      false -> "./deps/pcal/#{@script}"
+      false -> Path.join([Mix.Project.config()[:deps_path], "pcal", @script])
     end
   end
 end
