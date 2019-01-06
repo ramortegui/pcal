@@ -117,7 +117,7 @@ defmodule Pcal do
   defp script do
     case File.exists?(@script) do
       true -> @script
-      false -> Path.join [Mix.Project.config[:deps_path], "pcal", @script]
+      false -> Path.join([Mix.Project.config()[:deps_path], "pcal", @script])
     end
   end
 end
